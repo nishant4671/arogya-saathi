@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 15, 23, 42;
+}
+
+:root.light-mode {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.high-contrast {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+.high-contrast body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-start-rgb));
+}
+
+.high-contrast header,
+.high-contrast .bg-gray-800,
+.high-contrast .bg-gray-700 {
+  background-color: #000 !important;
+  border-color: #fff !important;
+  color: #fff !important;
+}
+
+.high-contrast button {
+  border: 2px solid #fff !important;
+}
+
+[data-text-size="normal"] {
+  font-size: 16px;
+}
+
+[data-text-size="large"] {
+  font-size: 20px;
+}
+
+[data-text-size="x-large"] {
+  font-size: 24px;
+}
+
+[data-text-size="large"] button,
+[data-text-size="x-large"] button {
+  padding: 12px 24px;
+}
+
+@media (max-width: 768px) {
+  .ml-64 {
+    margin-left: 0;
+  }
+  
+  .fixed.w-64 {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    z-index: 50;
+  }
+  
+  main {
+    margin-left: 0;
+    padding-top: 6rem;
+  }
+  
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
